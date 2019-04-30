@@ -27,7 +27,7 @@ public class CGLIBProxyTest {
     public Object getInstance(Object target) {
       this.target = target;
       // 代理类class文件存入本地磁盘方便我们反编译查看源码
-      System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "D:\\code");
+      // System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "D:\\code");
 
       // 创建加强器，用来创建动态代理类
       Enhancer enhancer = new Enhancer();

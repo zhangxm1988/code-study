@@ -45,7 +45,7 @@ public class JDKProxyTest {
 
     //JDK动态代理
     //生成$Proxy0的class文件
-    System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+    //System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
 
     Class proxyClass = Proxy.getProxyClass(IHello.class.getClassLoader(), new Class[]{IHello.class});
     System.out.println("proxy class:" + proxyClass.getName());
