@@ -1,8 +1,5 @@
 package com.java.code.study.java.lang.type;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author zhangxm
  * @description java.lang中String学习
@@ -10,6 +7,16 @@ import java.util.List;
  * @create 2019-04-10 19:13
  */
 public class StringTest {
+
+  public Void studyVoid() {
+    System.out.println("study void");
+
+    return null;
+  }
+
+  public void studyVoid1() {
+    System.out.println("study void");
+  }
 
   /**
    * 测试主方法
