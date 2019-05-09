@@ -1,8 +1,10 @@
 package com.java.code.study.java.lang.reflect;
 
 import com.java.code.study.java.lang.type.Student;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.*;
+import java.util.Arrays;
 
 /**
  * @author zhangxm
@@ -119,6 +121,14 @@ public class ReflectClassTest {
     } catch (InstantiationException e) {
       e.printStackTrace();
     }
+
+    // java.lang.reflect.Array类提供静态方法来动态创建和访问Java数组。
+    String[] array = (String[]) Array.newInstance(String.class, 10);
+    array = ArrayUtils.add(array, "aa");
+    array = ArrayUtils.add(array, "bb");
+    array = ArrayUtils.insert(0, array, "cc");
+
+    System.out.println(Arrays.toString(array));
   }
 
   public static boolean isGetter(Method method) {

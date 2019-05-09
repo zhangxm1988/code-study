@@ -1,5 +1,7 @@
 package com.java.code.study.java.lang.type;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * @author zhangxm
  * @description java.lang中String学习
@@ -35,6 +37,12 @@ public class StringTest {
     System.out.println(str1.equals(str2));//true
     System.out.println(str1.equals(str3));//true
     System.out.println(str2.equals(str3));//true
+
+    String[] strArray = new String[]{"a", "b", "c", "d", "e"};
+    // StringUtils study
+    String joinStr = StringUtils.join("d");
+    joinStr = StringUtils.join(strArray, ",");
+    System.out.println("StringUtils join method: " + joinStr);
 
   }
 
