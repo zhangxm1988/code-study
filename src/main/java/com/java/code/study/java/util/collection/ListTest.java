@@ -57,9 +57,30 @@ public class ListTest {
 
 
     // LinkedList集合
-    List<Integer> linkedList = new LinkedList<>();
+    // 数据存储是基于双向链表实现的
+    LinkedList<Integer> linkedList = new LinkedList<>();
+    linkedList.add(30);
+    linkedList.add(20);
+    linkedList.add(45);
+    linkedList.add(36);
+    linkedList.add(88);
+    linkedList.add(3, 55);
+    System.out.println("linkedList:" + linkedList);
+    System.out.println("linkedList first:" + (linkedList).getFirst());
+    System.out.println("linkedList last:" + (linkedList).getLast());
+
+    //linkedList.pollFirst();
+    //linkedList.pollLast();
+    //linkedList.pop();
+    //linkedList.push(10);
+    System.out.println(linkedList.peek());
+    System.out.println(linkedList.peekLast());
 
 
+    Iterator<Integer> iterator1 = linkedList.listIterator();
+    while(iterator1.hasNext()) {
+      System.out.println(iterator1.next());
+    }
   }
 
 }
