@@ -1,6 +1,5 @@
 package com.java.code.study.java.util.collection;
 
-import com.sun.deploy.util.ArrayUtil;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.Array;
