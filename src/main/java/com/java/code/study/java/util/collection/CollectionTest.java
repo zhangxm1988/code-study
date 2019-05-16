@@ -14,10 +14,7 @@ public class CollectionTest {
 
     // 顶级接口 Collection
     Collection collection = null;
-
-    // Set集合
-
-    // Map
+    List list = Collections.EMPTY_LIST;
 
   }
 
