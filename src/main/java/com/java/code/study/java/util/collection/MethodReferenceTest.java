@@ -52,7 +52,6 @@ public class MethodReferenceTest {
     // 计算时，方法引用会创建函数式接口的一个实例。
     // 注意方法引用是一个Lambda表达式，其中方法引用的操作符是双冒号"::"。
 
-
   }
 
 }
