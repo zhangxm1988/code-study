@@ -5,9 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author zhangxm
@@ -21,22 +20,21 @@ public class MethodReferenceTest {
 
   @Test
   public void testMethodReference() {
+    // 构造器引用
+    final Car car = Car.create(Car::new);
+    List<Car> carList = Arrays.asList(car);
 
-    Person[] pArr = new Person[]{
-        new Person("003", LocalDate.of(2016,9,1)),
-        new Person("001", LocalDate.of(2016,2,1)),
-        new Person("002", LocalDate.of(2016,3,1)),
-        new Person("004", LocalDate.of(2016,12,1))};
-    Arrays.sort(pArr, new Comparator<Person>() {
-      @Override
-      public int compare(Person o1, Person o2) {
-        return o1.getBirthday().compareTo(o2.getBirthday());
-      }
-    });
+    // 静态方法引用
+    carList.forEach(Car::collide);
 
-    Arrays.sort(pArr, (a, b) -> Person.compareByAge(b, a));
+    // 特点类的任意对象的方法引用
+    carList.forEach(Car::repair);
 
-    System.out.println(Arrays.asList(pArr));
+    final Car police = Car.create(Car::new);
+    carList = Arrays.asList(car, police);
+    // 特定对象的方法引用
+    carList.forEach(car::follow);
+
   }
 
 
