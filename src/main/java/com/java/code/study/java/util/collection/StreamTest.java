@@ -1,9 +1,9 @@
 package com.java.code.study.java.util.collection;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -13,6 +13,16 @@ import java.util.stream.Stream;
  * @create 2019-05-14 15:56
  */
 public class StreamTest {
+
+  public static void print(String text) {
+    // 这也是一个模仿 Scala 语言中的概念，作为一个容器，它可能含有某值，或者不包含。
+    Optional.ofNullable(text).ifPresent(System.out::println);
+  }
+
+  public static int getLength(String text) {
+    // 这也是一个模仿 Scala 语言中的概念，作为一个容器，它可能含有某值，或者不包含。
+    return Optional.ofNullable(text).map(String::length).orElse(-1);
+  }
 
   public static void main(String[] args) {
 
@@ -24,14 +34,19 @@ public class StreamTest {
     // study Arrays.stream()
     Integer[] numberArray = new Integer[]{1,2,3,4,5,6,7,8,9,0};
     Arrays.stream(numberArray).forEach(num -> {System.out.print(num);});
-    System.out.println();
+    System.out.println("\nstudy Arrays.stream");
+    Stream.of(numberArray).forEach(num -> {System.out.print(num);});
+    System.out.println("\nstudy Stream.of");
+
     // study collection.stream()
     List<Integer> list = new ArrayList<>();
-    list.add(1);list.add(2);list.add(3);list.add(4);list.add(5);list.add(6);list.add(7);
+    list.add(1);list.add(2);list.add(3);list.add(4);
+    list.add(5);list.add(6);list.add(7);
     list.stream().forEach(num -> {System.out.print(num);});
-    System.out.println();
+    System.out.println("\nstudy collection.stream");
     list.parallelStream().forEach(num -> {System.out.print(num);});
-    System.out.println();
+    System.out.println("\nstudy collection.parallelStream");
+
     // 流的操作类型 1.Intermediate(中间) 2.Terminal（终止）
     // study Intermediate   这类操作都是惰性化的（lazy）
     list.parallelStream()
@@ -43,7 +58,25 @@ public class StreamTest {
         .mapToInt(Integer::valueOf).toArray();
     Arrays.stream("4,5,6".split(",")).flatMap(Stream::of);
 
+    // study Optional
+    StreamTest.print("study optional");
+    int length = StreamTest.getLength("study optional");
+    System.out.println("Optional length:" + length);
 
+    // 自己生成流
+    // 生成10个随机整数
+    Random random = new Random(10);
+    Supplier<Integer> supplier = random::nextInt;
+    Stream.generate(supplier).limit(2).forEach(System.out::println);
+
+    // Another way
+    IntStream.generate(() -> (int) (System.nanoTime() % 100)).
+        limit(10).forEach(System.out::println);
+
+    // study Stream.iterate
+    Stream.iterate(0, n -> n + 3).limit(10).forEach(System.out::println);
+
+    // 用 Collectors 来进行 reduction 操作
   }
 
 }

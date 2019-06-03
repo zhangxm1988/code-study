@@ -1,5 +1,7 @@
 package com.java.code.study.java.util.collection;
 
+import java.util.function.Supplier;
+
 /**
  * @author zhangxm
  * @description ${description}
