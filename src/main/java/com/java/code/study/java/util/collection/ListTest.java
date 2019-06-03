@@ -63,6 +63,21 @@ public class ListTest {
     CopyOnWriteArrayList<Integer> cwList = new CopyOnWriteArrayList<>();
     cwList.add(36);cwList.add(38);cwList.add(40);cwList.add(24);cwList.add(28);
 
+    // Stack集合
+    // Stack是栈。它的特性是：先进后出(FILO, First In Last Out)。
+    // 或者是后进先出（LIFO last in first out）
+    Stack<String> stack = new Stack<>();
+    // 将1,2,3,4,5添加到栈中
+    for(int i=1; i<6; i++) {
+      stack.push(String.valueOf(i));
+    }
+    stack.peek();
+    System.out.println("study Stack");
+    stack.forEach(System.out::println);
+    int position = stack.search(String.valueOf(2));
+    System.out.println("stack position:" + position);
+
+
     // LinkedList集合
     // 数据存储是基于双向链表实现的
     // 适用场景：基于链表实现的非线程安全的集合。查询元素慢，插入，删除中间元素快。 读少写多
