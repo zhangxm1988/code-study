@@ -12,7 +12,10 @@ public class MyThread extends Thread {
   private AtomicInteger threadNum = new AtomicInteger();
 
   public void run() {
-    System.out.println("study Thread happy" + threadNum.incrementAndGet());
+    synchronized(this) {
+      System.out.println(this.getState());
+      System.out.println("study Thread happy" + threadNum.incrementAndGet());
+    }
   }
 
 }
