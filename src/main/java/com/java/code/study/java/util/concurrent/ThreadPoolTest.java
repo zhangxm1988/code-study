@@ -16,6 +16,11 @@ import java.util.concurrent.Executors;
 @SpringBootTest
 public class ThreadPoolTest {
 
+  // submit()，提交一个线程任务，可以接受回调函数的返回值吗，适用于需要处理返回着或者异常的业务场景
+  // execute()，执行一个任务，没有返回值
+  // shutdown()，表示不再接受新任务，但不会强行终止已经提交或者正在执行中的任务
+  // shutdownNow()，对于尚未执行的任务全部取消，正在执行的任务全部发出interrupt()，停止执行
+
   @Test
   public void fixedThreadPoolTest() {
     // 固定大小的线程池
