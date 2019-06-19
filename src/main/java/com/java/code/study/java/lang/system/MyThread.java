@@ -1,7 +1,5 @@
 package com.java.code.study.java.lang.system;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * @author zhangxm
  * @description ${description}
@@ -9,13 +7,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class MyThread extends Thread {
 
-  private AtomicInteger threadNum = new AtomicInteger();
-
   public void run() {
-    synchronized(this) {
-      System.out.println(this.getState());
-      System.out.println("study Thread happy" + threadNum.incrementAndGet());
-    }
+    System.out.println(Thread.currentThread().getName() + "正在执行。。。");
   }
 
 }
