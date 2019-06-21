@@ -7,8 +7,20 @@ package com.java.code.study.java.lang.system;
  */
 public class MyThread extends Thread {
 
+  private MyThreadLocal myThreadLocal = new MyThreadLocal();
+
+  public MyThread() {}
+
+  public MyThread(MyThreadLocal myThreadLocal) {
+    this.myThreadLocal = myThreadLocal;
+  }
+
   public void run() {
-    System.out.println(Thread.currentThread().getName() + "正在执行。。。");
+    for (int i = 0; i < 3; i++) {
+      System.out.println(Thread.currentThread().getName() + "\t" + myThreadLocal.getNextNum());
+    }
+
+    myThreadLocal.remove();
   }
 
 }
