@@ -1,7 +1,5 @@
 package com.java.code.study.java.util.concurrent;
 
-import org.apache.tomcat.util.threads.TaskThread;
-
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
