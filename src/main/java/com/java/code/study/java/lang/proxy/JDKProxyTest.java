@@ -6,7 +6,7 @@ import java.lang.reflect.*;
 
 /**
  * @author zhangxm
- * @description ${description}
+ * @description jdk动态代理
  * @create 2019-04-30 09:53
  */
 public class JDKProxyTest {
