@@ -77,6 +77,33 @@ public class StreamTest {
     Stream.iterate(0, n -> n + 3).limit(10).forEach(System.out::println);
 
     // 用 Collectors 来进行 reduction 操作
+
+    // 用 Collectors 来进行 collect 操作
+    List<Person> personList = new ArrayList<>();
+    personList.add(new Person("1001", "小华"));
+    personList.add(new Person("1001", "小红"));
+    personList.add(new Person(null, null));
+
+//    Map<String, String> personMap = personList.stream()
+//        .collect(Collectors.toMap(Person::getId, Person::getName,
+//            (key1, key2) -> key2 + "," + key1));
+//    System.out.println(personMap);
+
+    Map<String, List<String>> map = personList.stream()
+        .collect(Collectors.toMap(Person::getId,
+        p ->  {
+          List<String> getNameList = new ArrayList<>();
+          getNameList.add(p.getName());
+          return getNameList;
+        },
+        (List<String> value1, List<String> value2) -> {
+          value1.addAll(value2);
+          return value1;
+        }
+    ));
+
+    System.out.println(map);
+
   }
 
 }
