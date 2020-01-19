@@ -35,6 +35,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- redis依赖包 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -51,11 +56,11 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-    <dependency>
-      <groupId>me.gaigeshen.wechat</groupId>
-      <artifactId>wechat-pay</artifactId>
-      <version>1.0.0</version>
-    </dependency>
+		<dependency>
+		  <groupId>me.gaigeshen.wechat</groupId>
+		  <artifactId>wechat-pay</artifactId>
+		  <version>1.0.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -87,7 +92,11 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>5.1.5.RELEASE</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

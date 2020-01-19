@@ -99,7 +99,7 @@ public class MapTest {
 
     // study Properties
     Properties properties = new Properties();
-    ClassPathResource classPathResource = new ClassPathResource("application.properties");
+    ClassPathResource classPathResource = new ClassPathResource("application.yml");
     try {
       properties.load(classPathResource.getInputStream());
     } catch (IOException e) {
