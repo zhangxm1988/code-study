@@ -1,6 +1,7 @@
 package com.java.code.study.redis.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,7 @@ public class RedisService {
      * @param time
      * @return
      */
+    @Cacheable
     public boolean expire(String key, long time) {
         return redisTemplate.expire(key, time, TimeUnit.SECONDS);
     }
