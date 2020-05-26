@@ -27,6 +27,9 @@ public class MapTest {
     // 当红黑树的长度小于等于6时由红黑树转换成链表
 
     Map<String, String> map = new HashMap(8);
+    if (map.isEmpty()) {
+
+    }
     map.put("key1", "value1");
     map.put("key2", "value2");
     map.put("key3", "value3");

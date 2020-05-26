@@ -79,6 +79,18 @@ public class ArraysTest {
     System.out.println(Arrays.toString(array));
 
 
+    // study List transfer Array
+    List<String> stringList = new ArrayList<>();
+    stringList.add("array1");
+    stringList.add("array2");
+    stringList.add("array3");
+
+    String[] strArray = stringList.toArray(new String[0]);
+    System.out.println("strArray: " + strArray[1]);
+
+    String[] str = new String[] { "yang", "hao" };
+    List arrayList = Arrays.asList(str);
+
   }
 
 }

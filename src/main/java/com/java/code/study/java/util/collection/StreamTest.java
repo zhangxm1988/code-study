@@ -82,12 +82,12 @@ public class StreamTest {
     List<Person> personList = new ArrayList<>();
     personList.add(new Person("1001", "小华"));
     personList.add(new Person("1001", "小红"));
-    personList.add(new Person(null, null));
+    personList.add(new Person(null, "小丽"));
 
-//    Map<String, String> personMap = personList.stream()
-//        .collect(Collectors.toMap(Person::getId, Person::getName,
-//            (key1, key2) -> key2 + "," + key1));
-//    System.out.println(personMap);
+    Map<String, String> personMap = personList.stream()
+        .collect(Collectors.toMap(Person::getId, Person::getName,
+            (key1, key2) -> key2 + "," + key1));
+    System.out.println(personMap);
 
     Map<String, List<String>> map = personList.stream()
         .collect(Collectors.toMap(Person::getId,

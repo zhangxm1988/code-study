@@ -1,8 +1,14 @@
 package com.java.code.study.java.util.collection;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Stack;
+import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.Consumer;
 
 /**
  * @author zhangxm
@@ -103,6 +109,17 @@ public class ListTest {
     while(iterator1.hasNext()) {
       System.out.println("LinkedList:" + iterator1.next());
     }
+
+    // subList study
+    List<String> arrayList = new ArrayList<>();
+    arrayList.add("subList1");
+    arrayList.add("subList2");
+
+    arrayList = arrayList.subList(0, 2);
+    System.out.println("arrayList:" + arrayList);
+
+    arrayList.addAll(new ArrayList<>());
+
   }
 
 }

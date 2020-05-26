@@ -16,6 +16,10 @@ public class CollectionTest {
     Collection collection = null;
     List list = Collections.EMPTY_LIST;
 
+//    Collections.emptyList().add("1");
+    String singletonList = "singletonList";
+    Collections.singletonList(singletonList).add("2");
+
   }
 
 }
