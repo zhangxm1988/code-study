@@ -1,5 +1,6 @@
 package com.java.code.study.zookeeper.client;
 
+import com.java.code.study.zookeeper.watcher.WatcherApi;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.Watcher;
@@ -11,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -134,4 +136,18 @@ public class ZookeeperApi {
             return  null;
         }
     }
+
+    @PostConstruct
+    public  void init() {
+        String path="/zk-watcher-2";
+        logger.info("【执行初始化测试方法。。。。。。。。。。。。】");
+        createNode(path,"测试");
+        String value = getData(path, new WatcherApi());
+        logger.info("【执行初始化测试方法getData返回值。。。。。。。。。。。。】={}",value);
+
+        // 删除节点出发 监听事件
+        // deleteNode(path);
+
+    }
+
 }
