@@ -1,16 +1,21 @@
+# Tomcat
+server:
+    port: 8888
+
 spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://192.168.200.104:3306/vmp_ar?useUnicode=true&characterEncoding=UTF8
-        driver-class-name: com.mysql.jdbc.Driver
-        username: vmp
-        password: Vmp.2017
+        url: jdbc:mysql://112.124.52.105:3306/platform_data?useUnicode=true&characterEncoding=UTF8
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: platform-data
+        password: zhangxm1988
         hikari:
             maximum-pool-size: 5
             max-lifetime: 1800000
     ## redis config
     redis:
-        host: 192.168.201.174
+        host: 112.124.52.105
+        password: zhangxm2021
         port: 6379
         database: 0
         timeout: 5000
@@ -19,5 +24,7 @@ spring:
                 max-idle: 20
                 max-active: 8
                 min-idle: 0
-
-
+# zookeeper config
+zookeeper:
+    address: 112.124.52.105:2181
+    timeout: 4000
