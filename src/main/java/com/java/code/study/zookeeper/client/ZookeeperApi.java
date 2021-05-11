@@ -35,7 +35,7 @@ public class ZookeeperApi {
      * @param needWatch  指定是否复用zookeeper中默认的Watcher
      * @return
      */
-    public Stat exists(String path, boolean needWatch){
+    public Stat exists(String path, boolean needWatch) {
         try {
             return zooKeeperClient.exists(path,needWatch);
         } catch (Exception e) {
@@ -52,7 +52,7 @@ public class ZookeeperApi {
      * @param watcher  传入指定的监听类
      * @return
      */
-    public Stat exists(String path,Watcher watcher ){
+    public Stat exists(String path,Watcher watcher ) {
         try {
             return zooKeeperClient.exists(path,watcher);
         } catch (Exception e) {
@@ -99,7 +99,7 @@ public class ZookeeperApi {
      * 删除持久化节点
      * @param path
      */
-    public boolean deleteNode(String path){
+    public boolean deleteNode(String path) {
         try {
             // version参数指定要更新的数据的版本,
             // 如果version和真实的版本不同, 更新操作将失败. 指定version为-1则忽略版本检查
@@ -115,7 +115,7 @@ public class ZookeeperApi {
      * 获取当前节点的子节点(不包含孙子节点)
      * @param path 父节点path
      */
-    public List<String> getChildren(String path) throws KeeperException, InterruptedException{
+    public List<String> getChildren(String path) throws KeeperException, InterruptedException {
         List<String> list = zooKeeperClient.getChildren(path, false);
         return list;
     }
