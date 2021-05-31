@@ -68,7 +68,7 @@ public class ZookeeperApi {
      */
     public boolean createNode(String path, String data) {
         try {
-            zooKeeperClient.create(path,data.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+            zooKeeperClient.create(path, data.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             return true;
         } catch (Exception e) {
             logger.error("【创建持久化节点异常】{},{},{}",path,data,e);
