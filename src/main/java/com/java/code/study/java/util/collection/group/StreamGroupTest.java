@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author xiaoming.zhang@zhiyoubao.com
+ * @author zhxiaoming1988@163.com
  * @description stream 多字段分组、多个列汇总统计
  *
  * @date 2020/7/18 13:26

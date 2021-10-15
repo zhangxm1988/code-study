@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author xiaoming.zhang@zhiyoubao.com
+ * @author zhxiaoming1988@163.com
  * @description zookeeper test
  *
  * @date 2021/5/10 15:35
@@ -28,7 +28,7 @@ public class ZookeeperTest {
 
     @Test
     public void getDataTest() {
-        String nodeValue = zookeeperApi.getData("/study-zookeeper", new WatcherApi());
+        String nodeValue = zookeeperApi.getData("/java-client", new WatcherApi());
         System.out.println("path:/study-zookeeper node value is " + nodeValue);
     }
 

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author xiaoming.zhang@zhiyoubao.com
+ * @author zhxiaoming1988@163.com
  * @description zookeeper config
  *
  * @date 2021/5/10 14:59

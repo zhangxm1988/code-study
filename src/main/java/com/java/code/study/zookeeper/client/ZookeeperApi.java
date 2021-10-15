@@ -16,7 +16,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
- * @author xiaoming.zhang@zhiyoubao.com
+ * @author zhxiaoming1988@163.com
  * @description zookeeper api
  *
  * @date 2021/5/10 15:00
