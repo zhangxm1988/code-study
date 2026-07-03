@@ -12,11 +12,14 @@ import com.aliyuncs.profile.DefaultProfile;
  */
 public class InitClient {
 
-    public static String accessKeyId = "PLACEHOLDER_AK";
-    public static String accessKeySecret = "PLACEHOLDER_SK";
-    public static String mpsRegionId = "cn-beijing";
+    public static String accessKeyId = System.getenv("ALIBABA_CLOUD_ACCESS_KEY_ID");
+    public static String accessKeySecret = System.getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET");
+    public static String mpsRegionId = System.getenv().getOrDefault("MPS_REGION_ID", "cn-beijing");
 
     public static DefaultAcsClient initMpsClient() throws ClientException {
+        if (accessKeyId == null || accessKeySecret == null) {
+            throw new IllegalStateException("ALIBABA_CLOUD_ACCESS_KEY_ID and ALIBABA_CLOUD_ACCESS_KEY_SECRET env vars must be set");
+        }
 
         DefaultProfile profile = DefaultProfile.getProfile(mpsRegionId, accessKeyId, accessKeySecret);
         DefaultAcsClient client = new DefaultAcsClient(profile);
