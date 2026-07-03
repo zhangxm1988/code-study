@@ -3,7 +3,7 @@ package com.java.code.study.java.util.collection.group;
 import lombok.Data;
 
 /**
- * @author xiaoming.zhang@zhiyoubao.com
+ * @author zhxiaoming1988@163.com
  * @description 用于统计的值
  *
  * @date 2020/7/18 13:29

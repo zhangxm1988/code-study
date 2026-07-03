@@ -82,7 +82,17 @@ public class StreamTest {
     List<Person> personList = new ArrayList<>();
     personList.add(new Person("1001", "小华"));
     personList.add(new Person("1001", "小红"));
-    personList.add(new Person(null, "小丽"));
+    personList.add(new Person("1002", "小丽"));
+
+    personList.add(new Person("1002", "小丽"));
+
+    personList = personList.stream().collect(Collectors.collectingAndThen(
+        Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(person -> person.getId() + ";" + person.getName()))), ArrayList::new)
+    );
+
+    personList.stream().forEach(person -> {
+      System.out.println("person:" + person.getId() + ";" + person.getName());
+    });
 
     Map<String, String> personMap = personList.stream()
         .collect(Collectors.toMap(Person::getId, Person::getName,

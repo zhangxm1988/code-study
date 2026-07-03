@@ -44,6 +44,10 @@ public class StringTest {
     joinStr = StringUtils.join(strArray, ",");
     System.out.println("StringUtils join method: " + joinStr);
 
+    String tempStr = ",abc";
+    int index = tempStr.indexOf(",");
+    System.out.println("index:" + index);
+
   }
 
 }

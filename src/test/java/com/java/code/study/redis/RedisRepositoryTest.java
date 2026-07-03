@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author xiaoming.zhang@zhiyoubao.com
+ * @author zhxiaoming1988@163.com
  * @description
  * @date 2020/1/20 14:37
  */

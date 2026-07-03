@@ -6,7 +6,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 /**
- * @author xiaoming.zhang@zhiyoubao.com
+ * @author zhxiaoming1988@163.com
  * @description
  * @date 2020/1/20 14:22
  */
